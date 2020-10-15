@@ -1,0 +1,1 @@
+web: gunicorn app:lyrics --timeout 100 --log-file=-
