@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 APIKEY = "AIzaSyCClw6FEK-Wukrklg5psA2hOqR1pskdzWg"
 ENGINEID = "015117108339957557193:wzr7fdpk6ii"
-root_url = "https://www.googleapis.com/customsearch/v1?"
+root_url = "https://www.googleapis.com/customsearch/v1/siterestrict?"
 
 class Song:
     def __init__(self,query):
@@ -43,5 +43,6 @@ class Song:
         #     return (lyrics_new,artist,title,album)
         else:
             return None
+            
     def __str__(self):
         return self.lyrics
