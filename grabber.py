@@ -35,7 +35,10 @@ class Song:
         lyrics = html.find('div',class_='lyrics').get_text().strip("\n")
         chunk = html.find("div",{"class":"header_with_cover_art-primary_info"}).findChildren(recursive=False)
         artist,title = chunk[1].get_text().strip('\n'),chunk[0].get_text()
-        album = chunk[4].get_text().strip("\n").split("\n")[1]
+        try:
+            album = chunk[4].get_text().strip("\n").split("\n")[1]
+        except IndexError:
+            album = None
         # lyrics_new = html.find('div',class_='SongPageGrid-sc-1vi6xda-0 DGVcp Lyrics__Root-sc-1ynbvzw-0 jvlKWy').get_text().strip("\n")
         if lyrics:
             return (lyrics,artist,title,album)
